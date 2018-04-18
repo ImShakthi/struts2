@@ -7,7 +7,7 @@
 
 	<constant name="struts.devMode" value="true" />
 
-	<package name="simplestruts2" extends="struts-default">
+	<package name="basicmanagement" namespace="/basicmanagement" extends="struts-default">
 		<action name="index">
 			<result>/index.jsp</result>
 		</action>
@@ -18,7 +18,7 @@
 		</action>
 
 		<action name="getAdmin" method="getAdmin" class="com.sakthi.struts.helloworld.action.HelloWorldAction">
-<!-- 			<result name="success">/pages/HelloWorld.jsp</result> -->
+			<result name="json"></result>
 		</action>
 		
 	</package>

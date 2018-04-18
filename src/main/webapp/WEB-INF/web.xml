@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<web-app id="WebApp_ID" version="2.4" xmlns="http://java.sun.com/xml/ns/j2ee" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://java.sun.com/xml/ns/j2ee http://java.sun.com/xml/ns/j2ee/web-app_2_4.xsd">
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://xmlns.jcp.org/xml/ns/javaee" xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_3_1.xsd" id="WebApp_ID" version="3.1">
 <display-name>Simple struts2</display-name>
   <welcome-file-list>
       <welcome-file>index.jsp</welcome-file>
@@ -16,4 +16,36 @@
         <url-pattern>/*</url-pattern>
     </filter-mapping>
     
+<!--     RESTFul web service -->
+<!--     <listener> -->
+<!--       <listener-class> -->
+<!--          org.jboss.resteasy.plugins.server.servlet.ResteasyBootstrap -->
+<!--       </listener-class> -->
+<!--    	</listener> -->
+   
+<!--     <servlet> -->
+<!--         <servlet-name>resteasy-servlet</servlet-name> -->
+<!--         <servlet-class> -->
+<!--             org.jboss.resteasy.plugins.server.servlet.HttpServletDispatcher -->
+<!--         </servlet-class> -->
+<!--         <init-param> -->
+<!--         <param-name>javax.ws.rs.Application</param-name> -->
+<!--         <param-value>com.sakthi.rest.resteasy.app.RestApp</param-value> -->
+<!--     </init-param> -->
+<!--     </servlet> -->
+  
+<!--     <servlet-mapping> -->
+<!--         <servlet-name>resteasy-servlet</servlet-name> -->
+<!--         <url-pattern>/*</url-pattern> -->
+<!--     </servlet-mapping> -->
+    
+<!--        <context-param> -->
+<!--       <param-name>resteasy.scan</param-name> -->
+<!--       <param-value>true</param-value> -->
+<!--    </context-param> -->
+<!--    <context-param> -->
+<!--       <param-name>resteasy.servlet.mapping.prefix</param-name> -->
+<!--       <param-value></param-value> -->
+<!--    </context-param> -->
+    <!--     RESTFul web service -->
 </web-app>
