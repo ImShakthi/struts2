@@ -8,26 +8,51 @@ var BaseHandlerUtil = {
 		}
 	},
 	onClick : function() {
-		new Ajax.Request('basicmanagement/getAdmin', {
-			onSuccess : function(response) {
-				console.log("sccess ", response);
-				try {
-					var res = response.responseText;
-					var json = JSON.parse(res);
-					console.log(json.message);
-					console.log(json.name);
+		try {
+			console.log("log......");
+			$.ajax({
+				url : "basicmanagement/getAdmin",
+				success : function(result) {
+					try {
+						console.log("reslt ", result);
+						var json = JSON.parse(result);
+						console.log(json.message);
+						console.log(json.name);
 
-					document.getElementById("name").innerHTML = json.name;
-					document.getElementById("message").innerHTML = json.message;
-				} catch (e) {
-					console.log(e);
+						document.getElementById("name").innerHTML = json.name;
+						document.getElementById("message").innerHTML = json.message;
+					} catch (e) {
+						console.log(e);
+					}
 				}
-			}
+			});
+		} catch (e) {
+			console.log("error in onlick ", e);
+		}
+	},
+	signUpUser : function() {
+		try {
 
-		//			onComplete : function(response) {
-		//				console.log("complete ", response);
-		//			}
-		});
+			BaseHandlerUtil.addUser();
+
+		} catch (e) {
+			console.log("error while signUpUser ", e);
+		}
+	},
+	addUser : function(params) {
+		try {
+			$.ajax({
+				url : "loginmanagement/signUpUser",
+				type : "GET",
+				data : params,
+				complete : function(xhr, result) {
+					console.log("xhr ", xhr);
+					console.log("res ", result);
+				}
+			});
+		} catch (e) {
+			console.log("Error in adduser " + e);
+		}
 	}
 };
 
